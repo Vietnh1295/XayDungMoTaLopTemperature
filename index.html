@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Độ C <input type="number" oninput="ChuyenDoi(this)">
+<p id="result"></p>
+<script>
+    let Temperature =function (doC) {
+        this.doC =doC;
+        this.doCtodoF=function ()
+        {
+            return  (( this.doC * 1.8 ) +  32);
+        }
+        this.doCtodoK=function ()
+        {
+            return   this.doC+273.15;
+        }
+
+    }
+    function ChuyenDoi(obj) {
+        var NhietDo= new Temperature(obj.value);
+        document.getElementById('result').innerHTML='Độ F = '+NhietDo.doCtodoF()+' Độ k = '+NhietDo.doCtodoK();
+    }
+</script>
+</body>
+</html>
